@@ -1,59 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <title>Карточки | Проект 1</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Drag & Drop | Проект 2</title>
+  </head>
+  <body>
+    <div>
+      <div class="row">
+          <div class="col-header start">Начать</div>
+          <div class="col-header progress">В процессе</div>
+          <div class="col-header done">Готовы</div>
+      </div>
 
-    <div class="container">
-  <div
-      class="slide"
-      style="
-      background-image: 
-      url('https://images.unsplash.com/photo-1515159559764-c8990cc73657?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2759&q=80');
-      ">
-    <h3>Ferrari</h3>
-  </div>
-  <div
-      class="slide"
-      style="
-          background-image:
-           url('https://images.unsplash.com/photo-1515161318750-781d6122e367?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=648&q=80');
-        "
-  >
-    <h3>Lamborghini</h3>
-  </div>
-  <div
-      class="slide"
-      style="
-          background-image: 
-          url('https://images.unsplash.com/photo-1496440737103-cd596325d314?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80');
-        "
-  >
-    <h3>Camaro</h3>
-  </div>
-  <div
-      class="slide "
-      style="
-          background-image: 
-          url('https://images.unsplash.com/photo-1510832198440-a52376950479?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1496&q=80');
-        "
-  >
-    <h3>Aston</h3>
-  </div>
-  <div
-      class="slide"
-      style="
-          background-image: 
-          url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80');
-        "
-  >
-    <h3>Tesla</h3>
-  </div>
-</div>
-<script src="app.js"></script>
-</body>
+      <div class="row">
+        <div class="placeholder">
+          <div class="item" draggable="true">Перетащи меня</div>
+        </div>
+        <div class="placeholder"></div>
+        <div class="placeholder"></div>
+      </div>
+      
+    </div>
+    <script src="app.js"></script>
+  </body>
 </html>

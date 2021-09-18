@@ -1,16 +1,36 @@
-function slidePlugin (active = 2){
-  const slides = document.querySelectorAll('.slide');
-  slides[active].classList.add('active')
-slides.forEach((slide)=>{
-  slide.addEventListener('click',()=>{
-    closeActive();
-    slide.classList.add('active');
-  })
+const item = document.querySelector('.item');
+const placeholders = document.querySelectorAll('.placeholder');
+
+item.addEventListener('dragstart', dragstart);
+item.addEventListener('dragend', dragend);
+
+placeholders.forEach((el)=>{
+  el.addEventListener('dragover',dragover);
+  el.addEventListener('dragenter',dragenter);
+  el.addEventListener('dragleave',dragleave);
+  el.addEventListener('drop',dragdrop);
 })
-  
-function closeActive(){
-  slides.forEach((e)=>e.classList.remove('active'));
-}
+
+function dragstart(e){
+  e.target.classList.add('hold');
+  setTimeout(()=>e.target.classList.add('hide'),0);
 }
 
-slidePlugin(3)
+function dragend(e) {
+  e.target.classList.remove('hold');
+  e.target.classList.remove('hide');
+}
+
+function dragover(e){
+  e.preventDefault();
+}
+function dragenter(e){
+  e.target.classList.add('hovered');
+}
+function dragleave(e){
+  e.target.classList.remove('hovered');
+}
+function dragdrop(e){
+  e.target.classList.remove('hovered');
+  e.target.append(item);
+}
