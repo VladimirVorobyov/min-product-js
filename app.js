@@ -1,36 +1,44 @@
-const item = document.querySelector('.item');
-const placeholders = document.querySelectorAll('.placeholder');
+const down = document.querySelector('.down-button');
+const up = document.querySelector('.up-button');
+const slider = document.querySelector('.sidebar');
+const mainSlide = document.querySelector('.main-slide');
+const numberSlede = mainSlide.querySelectorAll('div').length;
+const container = document.querySelector('.container');
 
-item.addEventListener('dragstart', dragstart);
-item.addEventListener('dragend', dragend);
+slider.style.top = `-${(numberSlede-1)*100}vh`;
+let sumSlide = 0;
 
-placeholders.forEach((el)=>{
-  el.addEventListener('dragover',dragover);
-  el.addEventListener('dragenter',dragenter);
-  el.addEventListener('dragleave',dragleave);
-  el.addEventListener('drop',dragdrop);
-})
 
-function dragstart(e){
-  e.target.classList.add('hold');
-  setTimeout(()=>e.target.classList.add('hide'),0);
+down.addEventListener('click', ()=>addSlide('down'));
+up.addEventListener('click', ()=> addSlide('up'));
+
+document.addEventListener('keydown', (e)=>{
+  if(e.key === 'ArrowUp'){
+    addSlide('up')
+  }else if(e.key === 'ArrowDown'){
+    addSlide('down')
+  }
+});
+
+
+function addSlide(def){
+  if(def === 'up'){
+    sumSlide ++; 
+    if(sumSlide === numberSlede){
+      sumSlide = 0;
+    }
+  }else if(def === 'down'){
+    sumSlide --;
+    if(sumSlide<0){
+      sumSlide = numberSlede -1; 
+    }
+  }
+
+  const height = container.clientHeight; 
+  mainSlide.style.transform = `translateY(-${sumSlide * height}px)`;
+  slider.style.transform = `translateY(${sumSlide * height}px)`
+
+
 }
 
-function dragend(e) {
-  e.target.classList.remove('hold');
-  e.target.classList.remove('hide');
-}
 
-function dragover(e){
-  e.preventDefault();
-}
-function dragenter(e){
-  e.target.classList.add('hovered');
-}
-function dragleave(e){
-  e.target.classList.remove('hovered');
-}
-function dragdrop(e){
-  e.target.classList.remove('hovered');
-  e.target.append(item);
-}

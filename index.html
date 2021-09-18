@@ -3,26 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>Drag & Drop | Проект 2</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Слайдер | Проект 3</title>
   </head>
   <body>
-    <div>
-      <div class="row">
-          <div class="col-header start">Начать</div>
-          <div class="col-header progress">В процессе</div>
-          <div class="col-header done">Готовы</div>
-      </div>
-
-      <div class="row">
-        <div class="placeholder">
-          <div class="item" draggable="true">Перетащи меня</div>
+    <div class="container">
+      <div class="sidebar">
+        <div style="background: linear-gradient(229.99deg, #046d2c -26%, #013b019a 145%);">
+          <h1>Snow in the desert</h1>
+          <p>Love, death & robots</p>
         </div>
-        <div class="placeholder"></div>
-        <div class="placeholder"></div>
+        <div style="background: linear-gradient(215.32deg, #ffffff -100%, #000000 84%);">
+          <h1>Life Hutch</h1>
+          <p>Love, death & robots</p>
+        </div>
+        <div style="background: linear-gradient(221.87deg, #eab508 1%, #af5705 128%);">
+          <h1>Zima Blue</h1>
+          <p>Love, death & robots</p>
+        </div>
+        <div style="background: linear-gradient(220.16deg, #08b5eae3 168%,#89edffe3 8%);">
+          <h1>Automated Customer Service</h1>
+          <p>Love, death & robots</p>
+        </div>
       </div>
-      
+      <div class="main-slide">
+        <div
+          style="
+            background-image: url('https://images.unsplash.com/photo-1525672892528-eb2eead4effc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://images.unsplash.com/photo-1604004555489-723a93d6ce74?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://images.unsplash.com/photo-1544143040-b4893bee0783?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+          "
+        ></div>
+        <div
+          style="
+            background-image: url('https://images.unsplash.com/photo-1438109491414-7198515b166b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80');
+          "
+        ></div>
+      </div>
+      <div class="controls">
+        <button class="down-button">
+          <i class="fas fa-arrow-down"></i>
+        </button>
+        <button class="up-button">
+          <i class="fas fa-arrow-up"></i>
+        </button>
+      </div>
     </div>
-    <script src="app.js"></script>
+    <script src='app.js'></script>
   </body>
 </html>
